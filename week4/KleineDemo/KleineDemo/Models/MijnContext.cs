@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KleineDemo.Models;
 
 namespace KleineDemo.Models
 {
@@ -13,5 +14,7 @@ namespace KleineDemo.Models
         }
 
         public DbSet<Hero> Heroes { get; set; }
+
+        public DbSet<KleineDemo.Models.Superpower> Superpower { get; set; }
     }
 }

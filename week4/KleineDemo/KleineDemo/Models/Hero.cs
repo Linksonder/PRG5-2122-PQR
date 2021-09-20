@@ -12,5 +12,7 @@ namespace KleineDemo.Models
         public string Name { get; set; }
 
         public int PowerLevel { get; set; }
+        //hierna mag je - 'add-migration superpowers' en dan update-database
+        public virtual ICollection<Superpower> Superpowers { get; set; }
     }
 }
