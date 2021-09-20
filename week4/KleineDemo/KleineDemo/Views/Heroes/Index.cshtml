@@ -1,0 +1,10 @@
+﻿@model List<Hero>
+
+    <h2>My Heroes</h2>
+
+    <ul>
+        @foreach (Hero hero in Model)
+        {
+            <li>@hero.Name - @hero.PowerLevel</li>
+        }
+    </ul>

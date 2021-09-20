@@ -1,0 +1,25 @@
+﻿@model List<PingWing.Models.Dier>
+
+<div class="container">
+    <h2>PingWings</h2>
+
+    <p>Dit zijn mijn favoriete pingwings</p>
+
+    <ul>
+
+        @foreach (var dier in Model)
+        {
+            <li class="card">
+                <h2>@dier.Name</h2> 
+                <h3>@dier.Age years old!</h3>
+                <img src="https://cdn.babymarkt.com/babymarkt/img/868026/443/schleich-wild-life-penguin-14841-a300153.jpg" alt="Alternate Text" />
+            </li>
+
+        }
+
+        <!-- return View(dieren);    -->
+
+    </ul>
+
+</div>
+

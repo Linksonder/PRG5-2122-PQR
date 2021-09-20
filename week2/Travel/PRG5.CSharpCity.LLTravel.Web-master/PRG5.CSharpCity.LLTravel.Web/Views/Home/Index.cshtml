@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12  d-flex justify-content-center">
+                <p class="text-justify">Welcome to Linq Lambda Travel Agency</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <img src="~/images/LLTravel.png" class="mx-auto d-block" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Destination" asp-action="JustAfrica" asp-route-id="">
+                   African Destination
+                </a>
+            </div>
+            <div class="col-3">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Destination" asp-action="EnglishSpeaking" asp-route-id="">
+                   Native English Speaking
+                </a>
+            </div>
+            <div class="col-3">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Destination" asp-action="EuroArea" asp-route-id="">
+                    Euro area
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

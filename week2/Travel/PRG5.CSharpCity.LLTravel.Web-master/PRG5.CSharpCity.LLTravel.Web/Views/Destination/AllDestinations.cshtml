@@ -1,0 +1,104 @@
+﻿@model DestinationViewModel
+@{ ViewData["Title"] = "Home Page"; }
+
+<ul>
+
+    @{
+    for(int i = 0; i < 3; i++)
+    {
+        <li>@i : De kat krabt de krullen @i keer van de trap</li>
+    }
+    }
+
+</ul>
+
+
+<div class="text-center">
+    <h1 class="display-4">All our destinations.</h1>
+    <form asp-controller="Destination" asp-action="Filter" method="post">
+        <table class="table">
+            <thead>
+                <tr class="bg-primary">
+                    <th>
+                        Filter by Name
+                    </th>
+                    <th>
+                        Filter by Currency
+                    </th>
+                    <th>
+                        Filter by Region
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.EditorFor(m => m.FilterData.EnglishName)
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => m.FilterData.Currency.Symbol)
+                    </td>
+                    <td>
+                        <select asp-for="FilterData.Region" asp-items="ViewBag.Regions"></select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn-dark">Filter</button>
+    </form>
+    <table class="table">
+        <thead>
+
+            <tr class="bg-primary">
+                <th>
+                    <a class="nav-link text-danger" asp-area="" asp-controller="Destination" asp-action="Sort" asp-route-id="EnglishName">
+                        Name
+                    </a>
+                </th>
+                <th>
+                    ISO Code
+                </th>
+                <th>
+                    Native Name
+                </th>
+                <th>
+                    <a class="nav-link text-danger" asp-area="" asp-controller="Destination" asp-action="Sort" asp-route-id="Capital">
+                        Capital
+                    </a>
+                </th>
+                <th>
+                    Currency
+                </th>
+                <th>
+                    Region
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Countries)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.EnglishName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ISOCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NativeName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Capital)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Currency.Symbol)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SubRegion)
+    </td>
+</tr>
+       }
+        </tbody>
+    </table>
+
+</div>

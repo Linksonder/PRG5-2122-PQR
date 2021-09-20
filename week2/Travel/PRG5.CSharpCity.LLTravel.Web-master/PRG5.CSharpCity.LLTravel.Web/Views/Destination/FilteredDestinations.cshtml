@@ -1,0 +1,62 @@
+﻿@model DestinationViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">All @ViewBag.FilterName destinations.</h1>
+    <table class="table">
+        <thead>
+
+            <tr class="bg-primary">
+                <th>
+                    Name
+                </th>
+                <th>
+                    ISO code
+                </th>
+                <th>
+                    Native name
+                </th>
+                <th>
+                    Capital
+                </th>
+                <th>
+                    Currency
+                </th>
+                <th>
+                    Region
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.Countries != null)
+                    foreach (var item in Model.Countries)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnglishName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ISOCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NativeName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Capital)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Currency.Symbol)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubRegion)
+                            </td>
+                        </tr>
+                    }
+            }
+        </tbody>
+    </table>
+
+</div>
