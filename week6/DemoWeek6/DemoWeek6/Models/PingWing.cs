@@ -8,11 +8,14 @@ namespace DemoWeek6.Models
 {
     public class PingWing
     {
+        [Key]
+        public string Id { get; set; }
+
         [MaxLength(10)]
         public string Naam { get; set; }
 
-        [MinLength(0)]
-        [MaxLength(200)]
         public int Hoogte { get; set; }
+
     }
 }
+
